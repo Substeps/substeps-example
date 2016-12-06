@@ -28,14 +28,14 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<selenium.version>2.48.2</selenium.version>
+		<selenium.version>3.0.0-beta4</selenium.version>
 
 		<hamcrest.version>1.3.RC2</hamcrest.version>
 		<junit.version>4.10</junit.version>
 
-		<substeps.framework.version>1.0.1</substeps.framework.version>
+		<substeps.framework.version>1.0.4-SNAPSHOT</substeps.framework.version>
 
-		<webdriver.substeps.version>1.0.1</webdriver.substeps.version>
+		<webdriver.substeps.version>1.0.3-SNAPSHOT</webdriver.substeps.version>
 
 		<slf4j.version>1.7.13</slf4j.version>
 
@@ -43,11 +43,29 @@
 
 	<dependencies>
 
+		<dependency>
+			<groupId>com.typesafe</groupId>
+			<artifactId>config</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+
 		<!-- webdriver-substeps will also include substeps-core as a dependency -->
 		<dependency>
 			<groupId>org.substeps</groupId>
 			<artifactId>webdriver-substeps</artifactId>
 			<version>${webdriver.substeps.version}</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>org.substeps</groupId>
+					<artifactId>substeps-core</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>org.substeps</groupId>
+					<artifactId>substeps-core-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -68,7 +86,14 @@
 			<version>${substeps.framework.version}</version>
 		</dependency>
 
-			<dependency>
+		<dependency>
+			<groupId>org.substeps</groupId>
+			<artifactId>substeps-core-api</artifactId>
+			<version>${substeps.framework.version}</version>
+		</dependency>
+
+
+		<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
 				<version>${slf4j.version}</version>
@@ -103,20 +128,30 @@
 									<goal>run-features</goal>
 								</goals>
 							</execution>
+
+							<execution>
+								<id>Build SubSteps Report</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>build-report</goal>
+								</goals>
+							</execution>
+
 						</executions>
 
 						<configuration>
-
+							<runTestsInForkedVM>true</runTestsInForkedVM>
 							<executionConfigs>
 
 								<!-- One or more 'execution configurations', use multiple configs for different test initialisation, phases of project, etc -->
 
 								<executionConfig>
+									<dataOutputDirectory>${project.build.directory}/substeps_data</dataOutputDirectory>
 									<description>Self Test Features</description> <!-- This appears at the root of the results report -->
 
 									<tags>@all</tags>  <!-- optional - If the feature or scenario has this tag, then it will be 
 										included, otherwise it won't -->
-
+									<nonFatalTags>@all</nonFatalTags>
 									<fastFailParseErrors>false</fastFailParseErrors> <!-- optional - if true any parse errors will fail the build immediately, 
 										rather than attempting to execute as much as possible and fail those tests 
 										that can't be parsed -->
@@ -149,6 +184,14 @@
 								<reportTitle>Example Substeps Report - ${project.version}</reportTitle>
 							</executionReportBuilder>
 
+							<executionResultsCollector implementation="org.substeps.report.ExecutionResultsCollector">
+								<dataDir>${project.build.directory}/substeps_data</dataDir>
+								<pretty>true</pretty>
+							</executionResultsCollector>
+
+							<reportBuilder implementation="org.substeps.report.ReportBuilder">
+								<reportDir>${project.build.directory}/substeps_report</reportDir>
+							</reportBuilder>
 
 						</configuration>
 						<dependencies>
