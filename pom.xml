@@ -41,6 +41,25 @@
 
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>oss-snapshots</id>
+			<name>OSS Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>oss-plugin-snapshots</id>
+			<name>OSS Plugin Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+
+		</pluginRepository>
+
+	</pluginRepositories>
+
 	<dependencies>
 
 		<dependency>
