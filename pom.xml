@@ -159,7 +159,7 @@
 						</executions>
 
 						<configuration>
-							<runTestsInForkedVM>true</runTestsInForkedVM>
+							<runTestsInForkedVM>false</runTestsInForkedVM>
 							<executionConfigs>
 
 								<!-- One or more 'execution configurations', use multiple configs for different test initialisation, phases of project, etc -->
