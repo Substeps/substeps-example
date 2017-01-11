@@ -118,6 +118,14 @@
 				<version>${slf4j.version}</version>
 			</dependency>
 
+		<!-- required for HTMLUnit, although HTMLUnit doesn't work navigating to a URL...?? -->
+		<dependency>
+			<groupId>org.eclipse.jetty.websocket</groupId>
+			<artifactId>websocket-client</artifactId>
+			<version>9.4.0.v20161208</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<profiles>
