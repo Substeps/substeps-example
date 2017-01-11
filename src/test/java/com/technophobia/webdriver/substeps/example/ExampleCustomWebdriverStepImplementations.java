@@ -46,7 +46,7 @@ public class ExampleCustomWebdriverStepImplementations {
 	 */
     @Step("DoSomething with parameter \"([^\"]*)\"")
     public void exampleOne(final String param)  {
-    	
+
     	// TODO - do something
     	
 	/**
