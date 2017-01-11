@@ -204,12 +204,14 @@
 								</executionConfig>
 							</executionConfigs>
 
-							<!-- Default HTML report builder -->
+							<!-- Default HTML report builder
 
 							<executionReportBuilder implementation="com.technophobia.substeps.report.DefaultExecutionReportBuilder">
 								<outputDirectory>${project.build.directory}</outputDirectory>
 								<reportTitle>Example Substeps Report - ${project.version}</reportTitle>
 							</executionReportBuilder>
+
+							-->
 
 							<executionResultsCollector implementation="org.substeps.report.ExecutionResultsCollector">
 								<dataDir>${project.build.directory}/substeps_data</dataDir>
