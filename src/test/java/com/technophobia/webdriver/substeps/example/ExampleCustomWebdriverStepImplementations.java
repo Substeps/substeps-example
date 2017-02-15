@@ -25,6 +25,7 @@ import com.technophobia.substeps.model.SubSteps.Step;
 import com.technophobia.substeps.model.SubSteps.StepImplementations;
 import com.technophobia.substeps.model.SubSteps.StepParameter;
 import com.technophobia.substeps.model.parameter.IntegerConverter;
+import org.junit.Test;
 
 /**
  * An Example of a class providing custom substep implementations.
@@ -34,6 +35,7 @@ import com.technophobia.substeps.model.parameter.IntegerConverter;
  */
 @StepImplementations
 public class ExampleCustomWebdriverStepImplementations {
+
 
 	/**
 	 * An example substep implementation 
@@ -100,7 +102,7 @@ public class ExampleCustomWebdriverStepImplementations {
 	 * 				|row1-1   | row1-2  |  row1-3 |
 	 *              |row2-1   | row2-2  |  row3-3 |
 	 * @section Custom
-	 * @param param
+	 * @param table a list of mapped data representing the table
 	 */
     @Step("DoSomething with a table parameter")
     public void exampleThree(final List<Map<String,String>> table)  {
