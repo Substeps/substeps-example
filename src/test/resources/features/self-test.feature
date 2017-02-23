@@ -7,7 +7,7 @@ Feature: A feature to self test the webdriver substeps implementations
 
 Scenario: a scenario
 	Given I go to the self test page
-	Then I can see 'Hello Self Test page'
+	Then I can see 'Hello 2 Self Test page'
 	And if I click the 'click me' button
 	Then I can see "Wahoo" message
 	And I dont see "number one option" in select id select_id

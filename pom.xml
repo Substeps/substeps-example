@@ -10,7 +10,7 @@
 		and project -->
 	<groupId>org.substeps</groupId>
 	<artifactId>webdriver-substeps-example</artifactId>
-	<version>1.2.0</version>
+	<version>1.3.0</version>
 
 	<packaging>jar</packaging>
 	<name>Webdriver Substeps Example</name>
@@ -35,7 +35,7 @@
 
 		<substeps.framework.version>1.0.5</substeps.framework.version>
 
-		<webdriver.substeps.version>1.0.5</webdriver.substeps.version>
+		<webdriver.substeps.version>1.0.6</webdriver.substeps.version>
 
 		<slf4j.version>1.7.13</slf4j.version>
 
