@@ -28,14 +28,14 @@
   <appender-ref ref="console" />
 </logger>
 
-
-<logger name="com.technophobia.webdriver" additivity="false">
-  <level value="debug"/>
+<!-- if you have any issues with Substeps, increase these levels to debug -->
+<logger name="com.technophobia" additivity="false">
+  <level value="info"/>
   <appender-ref ref="console" />
 </logger>
 
-<logger name="com.technophobia.substeps" additivity="false">
-  <level value="debug"/>
+<logger name="org.substeps" additivity="false">
+  <level value="info"/>
   <appender-ref ref="console" />
 </logger>
 
