@@ -42,8 +42,8 @@ public class ExampleCustomWebdriverStepImplementations {
 	 * 
 	 * The commented annotations are used to process the javadocs to generate help and content regarding the step implementations used.
 	 * 
-	 * @example DoSomething with a parameter "fred"
-	 * @section Custom
+	 * @org.substeps.step.example DoSomething with a parameter "fred"
+	 * @org.substeps.step.section Custom
 	 * @param param
 	 */
     @Step("DoSomething with parameter \"([^\"]*)\"")
@@ -79,8 +79,8 @@ public class ExampleCustomWebdriverStepImplementations {
 	/**
 	 * Another example substep implementation 
 	 * 
-	 * @example DoSomething with an int parameter "fred"
-	 * @section Custom
+	 * @org.substeps.step.example DoSomething with an int parameter "fred"
+	 * @org.substeps.step.section Custom
 	 * @param param
 	 */
     @Step("DoSomething with an int parameter \"([^\"]*)\"")
@@ -97,11 +97,11 @@ public class ExampleCustomWebdriverStepImplementations {
 	/**
 	 * Yet another example substep implementation 
 	 * 
-	 * @example DoSomething with a table parameter
+	 * @org.substeps.step.example DoSomething with a table parameter
 	 * 				|col1     | col2    |  col3   |
 	 * 				|row1-1   | row1-2  |  row1-3 |
 	 *              |row2-1   | row2-2  |  row3-3 |
-	 * @section Custom
+	 * @org.substeps.step.section Custom
 	 * @param table a list of mapped data representing the table
 	 */
     @Step("DoSomething with a table parameter")
