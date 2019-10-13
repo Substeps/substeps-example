@@ -8,4 +8,6 @@ It can be built and run using standard maven commands:
 
 and will run against a static html included with the source and generate the report and glossary.
 
-Feel free to use this as a starting point to create something more appropriate for your project.  
+Feel free to use this as a starting point to create something more appropriate for your project. 
+
+Requires JDK 11+, Maven 3.x 
